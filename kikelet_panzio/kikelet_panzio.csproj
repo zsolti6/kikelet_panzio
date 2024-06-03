@@ -27,4 +27,16 @@
     <Resource Include="ugyfel.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="foglalasok.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="szobak.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ugyfelek.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
