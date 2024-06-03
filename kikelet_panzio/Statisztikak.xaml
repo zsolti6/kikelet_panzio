@@ -1,0 +1,65 @@
+﻿<Page x:Class="kikelet_panzio.Statisztikak"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	  xmlns:local="clr-namespace:kikelet_panzio"
+	  mc:Ignorable="d" 
+	  d:DesignHeight="1080" d:DesignWidth="1820"
+	  Title="Statisztikak" Background="LightGray">
+	<Page.LayoutTransform>
+		<ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+	</Page.LayoutTransform>
+	<Page.Resources>
+		<Style TargetType="DatePicker">
+			<Setter Property="Width" Value="200"/>
+			<Setter Property="Height" Value="40"/>
+			<Setter Property="HorizontalAlignment" Value="Center"/>
+			<Setter Property="Margin" Value="10,10,10,10"/>
+		</Style>
+		<Style TargetType="Label">
+			<Setter Property="Margin" Value="10,0,10,0"/>
+			<Setter Property="FontSize" Value="45"/>
+			<Setter Property="Width" Value="400"/>
+			<Setter Property="HorizontalAlignment" Value="Center"/>
+		</Style>
+	</Page.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="200"/>
+			<RowDefinition Height="200"/>
+			<RowDefinition Height="100"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		
+		<Label Content="A tulajdonos számára fontos információk" Grid.Row="0" Grid.ColumnSpan="2" FontSize="70" HorizontalAlignment="Center" Height="120" Margin="0,0,0,0" Width="1300"/>
+
+		<StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">
+			<StackPanel Orientation="Horizontal">
+				<Label Content="Kezdődátum"/>
+				<Label Content="Végdátum"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<DatePicker Name="kezdo" Width="200" Height="40" FontSize="20" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Background="White">
+					<DatePicker.LayoutTransform>
+						<ScaleTransform ScaleX="2" ScaleY="2"/>
+					</DatePicker.LayoutTransform>
+				</DatePicker>
+				<DatePicker Name="veg" Width="200" Height="40" FontSize="20" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Background="White" SelectedDateChanged="veg_SelectedDateChanged">
+					<DatePicker.LayoutTransform>
+						<ScaleTransform ScaleX="2" ScaleY="2"/>
+					</DatePicker.LayoutTransform>
+				</DatePicker>
+			</StackPanel>
+		</StackPanel>
+		<Label Name="bevetel" Content="Összes bevétel -tól -ig:" Grid.Row="1" Grid.Column="1" Height="80" Width="600"/>
+
+        <Label Name="kiadott" Content="Legtöbbet kiadott szoba:" Grid.Row="2" Grid.ColumnSpan="2" Height="100" Width="600"/>
+
+        <ListBox Name="visszajaro" Grid.Row="3" Grid.ColumnSpan="2" Height="500" Width="600" FontSize="35"/>
+    </Grid>
+</Page>

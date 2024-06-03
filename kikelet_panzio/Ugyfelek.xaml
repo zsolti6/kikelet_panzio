@@ -1,0 +1,63 @@
+﻿<Page x:Class="kikelet_panzio.Ugyfelek"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	  xmlns:local="clr-namespace:kikelet_panzio"
+	  mc:Ignorable="d" 
+	  d:DesignHeight="1080" d:DesignWidth="1820"
+	  Title="Ugyfelek" Background="LightGray">
+    <Page.LayoutTransform>
+        <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+    </Page.LayoutTransform>
+    <Page.Resources>
+		<Style TargetType="TextBox">
+			<Setter Property="Width" Value="400"/>
+			<Setter Property="Height" Value="80"/>
+			<Setter Property="FontSize" Value="45"/>
+			<Setter Property="HorizontalAlignment" Value="Left"/>
+		</Style>
+		<Style TargetType="Label">
+			<Setter Property="HorizontalAlignment" Value="Right"/>
+			<Setter Property="Height" Value="75"/>
+			<Setter Property="FontSize" Value="40"/>
+		</Style>
+	</Page.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="200"/>
+			<RowDefinition Height="160"/>
+			<RowDefinition Height="160"/>
+			<RowDefinition Height="160"/>
+			<RowDefinition Height="100"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+
+		<Label Content="Új ügyfél felvitele" FontSize="70" HorizontalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="2" Height="120"/>
+
+		<Label Content="Az ügyfél neve:" Grid.Row="1" Grid.Column="0"/>
+		<TextBox Name="ugyfelnev" Grid.Row="1" Grid.Column="1"/>
+
+		<Label Content="Születési dátum:" Grid.Row="2" Grid.Column="0"/>
+		<DatePicker Name="szuldatum" Width="200" Height="40" FontSize="20" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Background="White">
+			<DatePicker.LayoutTransform>
+				<ScaleTransform ScaleX="2" ScaleY="2"/>
+			</DatePicker.LayoutTransform>
+		</DatePicker>
+		
+		<Label Content="E-mail cím:" Grid.Row="3" Grid.Column="0"/>
+		<TextBox Name="email" Grid.Row="3" Grid.Column="1" FontSize="32" Padding="12"/>
+		
+		<CheckBox Name="vip" Content="VIP ügyfél-e" Width="100" Grid.Row="4" Grid.ColumnSpan="2">
+			<CheckBox.LayoutTransform>
+				<ScaleTransform ScaleX="3" ScaleY="3"/>
+			</CheckBox.LayoutTransform>
+		</CheckBox>
+		
+		<Button Content="Regisztrálás" Width="400" Height="80" FontSize="40" HorizontalAlignment="Center" Click="regisztral" Grid.Row="5" Grid.ColumnSpan="2" Margin="0,0,0,100"/>
+	</Grid>
+</Page>

@@ -1,0 +1,102 @@
+﻿<Page x:Class="kikelet_panzio.Foglalasok"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:kikelet_panzio"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1820"
+	  Title="Foglalasok" Background="LightGray">
+    <Page.LayoutTransform>
+        <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+    </Page.LayoutTransform>
+    <Page.Resources>
+        <Style TargetType="ComboBox">
+            <Setter Property="Width" Value="400"/>
+            <Setter Property="Height" Value="80"/>
+            <Setter Property="FontSize" Value="40"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="45"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Width" Value="400"/>
+            <Setter Property="Height" Value="80"/>
+        </Style>
+        <Style TargetType="DatePicker">
+            <Setter Property="Background" Value="White"/>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <Label Content="Foglalások kezelése" FontSize="70" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="110"/>
+        
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="0,0,0,0">
+            <Label Content="Foglalás sorszáma:"/>
+            <ComboBox Name="foglalasSorszam" Width="150" SelectionChanged="foglalasSorszam_SelectionChanged"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="2" Grid.Column="0" Margin="0,0,100,0">
+            <Label Content="Szoba:"/>
+            <ComboBox Name="szobaId" SelectionChanged="szobaId_SelectionChanged"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Margin="0,0,250,0">
+            <Label Content="Ugyfél:"/>
+            <ComboBox Name="ugyfelId" SelectionChanged="ugyfelId_SelectionChanged"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="0" Margin="0,0,100,0">
+            <Label Content="Érkezés:"/>
+            <DatePicker Name="erkezes" Width="200" Height="40" FontSize="20" SelectedDateChanged="erkezes_SelectedDateChanged">
+                <DatePicker.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                </DatePicker.LayoutTransform>
+            </DatePicker>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1" Margin="0,0,250,0">
+            <Label Content="Távozás:"/>
+            <DatePicker Name="tavozas" Width="200" Height="40" FontSize="20" SelectedDateChanged="tavozas_SelectedDateChanged">
+                <DatePicker.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                </DatePicker.LayoutTransform>
+            </DatePicker>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Grid.Column="0" Margin="0,0,100,0">
+            <Label Content="Fő:"/>
+            <TextBox Name="fo" FontSize="45" TextChanged="fo_TextChanged"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.Column="1" Margin="0,0,250,0">
+            <Label Content="Ár:"/>
+            <TextBox Name="ar" FontSize="45" IsReadOnly="True"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <Label Content="Állapot:"/>
+            <ComboBox Name="allapot"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <Button Content="Végrehajt" Name="vegrehajtas" Margin="20,20,20,20" Width="400" Height="80" FontSize="45" Click="vegrehajtas_Click"/>
+            <ComboBox Name="muvelet" Margin="20,20,20,20" Width="400" Height="80" FontSize="45"/>
+        </StackPanel>
+    </Grid>
+</Page>

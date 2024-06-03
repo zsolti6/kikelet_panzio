@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="foglalas.png" />
+    <None Remove="hatter.jpg" />
+    <None Remove="kezdooldal.png" />
+    <None Remove="kilep.png" />
+    <None Remove="statisztika.png" />
+    <None Remove="szoba.png" />
+    <None Remove="ugyfel.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="foglalas.png" />
+    <Resource Include="hatter.jpg" />
+    <Resource Include="kezdooldal.png" />
+    <Resource Include="kilep.png" />
+    <Resource Include="statisztika.png" />
+    <Resource Include="szoba.png" />
+    <Resource Include="ugyfel.png" />
+  </ItemGroup>
+
+</Project>

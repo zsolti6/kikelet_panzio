@@ -1,0 +1,53 @@
+﻿<Page x:Class="kikelet_panzio.Szobak"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	  xmlns:local="clr-namespace:kikelet_panzio"
+	  mc:Ignorable="d" 
+	  d:DesignHeight="1080" d:DesignWidth="1820"
+	  Title="Szobak" Background="LightGray">
+    <Page.LayoutTransform>
+        <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+    </Page.LayoutTransform>
+    <Page.Resources>
+		<Style TargetType="TextBox">
+			<Setter Property="Width" Value="400"/>
+			<Setter Property="Height" Value="80"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="HorizontalAlignment" Value="Left"/>
+			<Setter Property="FontSize" Value="45"/>
+		</Style>
+		<Style TargetType="Label">
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="HorizontalAlignment" Value="Right"/>
+			<Setter Property="FontSize" Value="40"/>
+		</Style>
+	</Page.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="200"/>
+			<RowDefinition Height="175"/>
+			<RowDefinition Height="175"/>
+			<RowDefinition Height="175"/>
+			<RowDefinition Height="175"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		
+		<Label Content="A szobák adatainak módosítása" FontSize="70" HorizontalAlignment="Center" Margin="0,20,0,0" Grid.Row="0" Grid.ColumnSpan="2"/>
+		
+		<Label Content="A szoba azonosítója (2, 3, 4):" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right"/>
+		<ComboBox Name="szobaId" Width="400" Height="80" SelectedIndex="0" Cursor="Hand" SelectionChanged="szobaId_SelectionChanged" FontSize="45" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left"/>
+		
+		<Label Content="A férőhelyek száma:" Grid.Row="2" Grid.Column="0"/>
+		<TextBox Name="ferohely" Grid.Row="2" Grid.Column="1"/>
+
+		<TextBlock FontSize="40" TextWrapping="Wrap" Width="760" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center">Az aktuális ár, 1fő/éjszaka (6000-12000 Ft):</TextBlock>
+		<TextBox Name="ar" Grid.Row="3" Grid.Column="1"/>
+
+		<Button Name="valtoztat" Content="Változtatás" Width="250" Height="80" FontSize="40" Click="valtoztat_Click" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,0,0,50"/>
+	</Grid>
+</Page>
